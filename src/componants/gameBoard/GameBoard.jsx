@@ -3,14 +3,20 @@ import styles from './GameBoard.module.css';
 
 //this is the main board of the game, which contains 64 cell
 const Board = (props) =>{
+
     let table = []
     //creating 64 cell for the game board
     for (let i=0 ; i<64 ; i++) table.push(i)
+
     const [cellStatus , SetCellStatus] = useState()
 
-    const divStyle = {
-        backgroundColor: 'gray',
-      };
+    const [playerOne , SetPlayerOne] = useState({
+        
+    })
+    const [playerTwo , SetPlayerTwo] = useState({
+        
+    })
+
     return (
     
         <div className={styles.body}>
@@ -23,7 +29,7 @@ const Board = (props) =>{
                         key={e} 
                         className={styles.e} 
                         value={e}
-                        onClick={(evt)=>{ 
+                        onClick={(evt)=>{ evt.target.style.backgroundColor = 'black'
                             
                         }}></div>)
                 })}
